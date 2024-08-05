@@ -6,3 +6,6 @@ ng new <project-name>
 
 # Start
 ng serve
+
+# Create component
+ng generate component post
