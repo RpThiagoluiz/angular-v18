@@ -11,13 +11,16 @@ export type LoginPayload = {
 })
 
 export class MasterService {
-
+  //is a freeApi, some times it's return error
   private apiUrl: string = "https://freeapi.miniprojectideas.com/api/TicketsNew"
 
   constructor(private http: HttpClient
   ) { }
 
   login(payload: LoginPayload) {
-    return this.http.post(`${this.apiUrl}/Login`, payload)
+    console.log({
+      payload
+    })
+    // return this.http.post(`${this.apiUrl}/Login`, payload)
   }
 }
