@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LoginPayload, MasterService } from '../../services/master.service';
 import { Router } from '@angular/router';
+import { localStorageKey } from '../../utils/localStorageKey';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -39,7 +40,7 @@ export class LoginComponent {
 
     //Mock
     this.masterSrv.login(this.loginPayload)
-    localStorage.setItem('ticketUser', JSON.stringify(this.mockResult.data));
+    localStorage.setItem(localStorageKey, JSON.stringify(this.mockResult.data));
     this.router.navigateByUrl('dashboard')
 
     // this.masterSrv.login(this.loginPayload).subscribe((res: any) => {
