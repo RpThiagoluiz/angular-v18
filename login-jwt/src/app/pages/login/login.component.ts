@@ -5,6 +5,7 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { LoginPayload } from '../../types/loginResponse.type';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  loginForm!: FormGroup
+  loginForm!: FormGroup<{
+    email: FormControl,
+    password: FormControl
+  }>
 
 
   constructor(private router: Router, private loginService: LoginService, private toastService: ToastrService) {

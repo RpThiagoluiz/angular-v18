@@ -1,1 +1,34 @@
-<p>signup</p>
+<app-login-layout title="Sign in and start today!" primaryBtnText="Signup Now" secondaryBtnText="Login Now"
+  (submit)="submit()" (navigate)="navigate()" [disablePrimaryBtn]="!signupForm.valid">
+  <form [formGroup]="signupForm">
+    <app-primary-input formControlName="name" inputName="name" type="text" label="Your name" placeholder="John Doe">
+      <img src="assets/svg/person-icon.svg" alt="">
+    </app-primary-input>
+
+    <app-primary-input formControlName="email" inputName="email" type="email" label="Email"
+      placeholder="johndoe@gmail.com">
+      <img src="assets/svg/email-icon.svg" alt="">
+    </app-primary-input>
+    <app-primary-input formControlName="password" inputName="password" type="password" label="Password"
+      placeholder="Your password">
+      <img src="assets/svg/password-icon.svg" alt="">
+    </app-primary-input>
+
+    <span *ngIf="(signupForm.controls.password.dirty || signupForm.controls.password.touched)"
+      class="form-control-sm text-danger">
+      <span *ngIf="signupForm.controls.password.errors?.['required']">
+        *Password is Required and need special characters
+      </span>
+    </span>
+
+    <app-primary-input formControlName="confirmPassword" inputName="confirmPassword" type="password"
+      label="Confirm Your password" placeholder="Confirm password">
+      <img src="assets/svg/password-icon.svg" alt="">
+    </app-primary-input>
+
+    <span *ngIf="signupForm.errors?.['passwordMismatchError'] && signupForm.controls.confirmPassword.dirty">
+      *Password Doesn't matches
+    </span>
+
+  </form>
+</app-login-layout>
