@@ -17,3 +17,6 @@ npm install eslint-plugin-unused-imports --save-dev
 
 # Lint Staged - rodar o lint somente no que foi alterado
 npm install --save-dev lint-staged # requires further setup
+
+# Commit lint
+npm i @commitlint/cli @commitlint/config-conventional --save-dev
