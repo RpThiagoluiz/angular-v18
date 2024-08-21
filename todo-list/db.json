@@ -1,0 +1,16 @@
+{
+  "tasks": [
+    {
+      "id": "001",
+      "tarefa": "Estudar dotNET",
+      "categoria": "livre",
+      "concluido": false
+    },
+    {
+      "id": "002",
+      "tarefa": "Estudar Angular",
+      "categoria": "livre",
+      "concluido": false
+    }
+  ]
+}
