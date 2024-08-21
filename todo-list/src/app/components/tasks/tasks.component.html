@@ -1,0 +1,11 @@
+<app-add-task (onAddTask)="AddTask($event)"></app-add-task>
+@for (task of tasks; track task.id) {
+<app-task-item [task]="task" (onToggleDone)="onToggleDone($event)" (onDeleteTask)="deleteTask($event)"></app-task-item>
+} @empty {
+<li>Não existe tarefas cadastradas</li>
+}
+
+<!-- ngFor can be change for @for -->
+<!-- <app-task-item *ngFor="let task of tasks" [task]="task" (onDeleteTask)="deleteTask($event)"
+  (onToggleDone)="onToggleDone($event)">
+</app-task-item> -->
